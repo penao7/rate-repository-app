@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-native';
-import SignIn from './SignIn';
-import Text from './Text';
+import SignIn from '../SignIn';
+import Text from '../Text';
 
 const SignInTab = () => {
 

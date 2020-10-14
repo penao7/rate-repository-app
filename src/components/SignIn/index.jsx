@@ -2,17 +2,12 @@ import React from 'react';
 import { Formik } from 'formik';
 import SignInForm from './SignInForm';
 import * as yup from 'yup';
+import useSignIn from '../../hooks/useSignIn';
+import { useHistory } from 'react-router-native';
 
 const initialValues = {
   username: '',
   password: ''
-};
-
-const onSubmit = credentials => {
-  const username = credentials.username;
-  const password = credentials.password;
-
-  console.log(`trying to log in with credentials ${username} ${password}`);
 };
 
 const signInSchema = yup.object().shape({
@@ -24,7 +19,26 @@ const signInSchema = yup.object().shape({
     .required('Password is required')
 });
 
+
 const SignIn = () => {
+
+  const [signIn] = useSignIn();
+  const history = useHistory();
+
+  const onSubmit = async credentials => {
+    const { username, password } = credentials;
+
+    try {
+      const { authorize } = await signIn({ username, password });
+
+      if (authorize.accessToken) {
+        history.push('/repositories');
+      }
+
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <Formik

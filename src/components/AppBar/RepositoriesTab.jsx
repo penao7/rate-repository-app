@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-native';
-import RepositoryList from './RepositoryList';
-import Text from './Text';
+import RepositoryList from '../RepositoryList';
+import Text from '../Text';
 
 const RepositoriesTab = () => {
   return (
