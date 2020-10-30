@@ -10,13 +10,14 @@ const theme = {
     languageText: 'white',
     tabBackGround: 'hsl(200, 100%, 30%);',
     buttonPrimary: 'hsl(200, 100%, 45%);',
+    buttonDanger: 'salmon',
     buttonPrimaryText: 'white'
   },
   fontSizes: {
     body: 14,
     subheading: 13,
     heading: 20,
-    tab: 23
+    tab: 20
   },
   fonts: Platform.select({
     android: 'Roboto',

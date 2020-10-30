@@ -1,20 +1,20 @@
 import { useApolloClient } from '@apollo/react-hooks';
 import { useContext } from 'react';
+import { useHistory } from 'react-router-native';
 import AuthStorageContext from '../contexts/AuthStorageContext';
+
 
 const useLogOut = () => {
 
   const client = useApolloClient();
   const authStorage = useContext(AuthStorageContext);
+  const history = useHistory();
 
   const logout = async () => {
-    console.log('logout');
     await authStorage.removeAccessToken();
     await client.resetStore();
-
-    console.log(authStorage.getAccessToken());
+    history.push('/');
   };
-
 
   return logout;
 };

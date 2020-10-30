@@ -11,44 +11,62 @@ const styles = StyleSheet.create({
   rowBottomContainer: {
     display: 'flex',
     flexDirection: 'row',
-    paddingTop: 10
+    paddingTop: 10,
+    paddingBottom: 5
   },
 });
 
+const prettifyNumbers = (number) => {
+  if (number < 1000) {
+    return number;
+  }
+  if (number <= 9999) {
+    const thousands = number.toString().substring(0, 1);
+    const hundreds = number.toString().substring(1, 2);
+    return `${thousands.concat(',', hundreds)}k`;
+  }
+  const tensOfThousands = number.toString().substring(0, 2);
+  const thousands = number.toString().substring(2, 3);
+  const combinedNumber = tensOfThousands.concat(',', thousands);
+
+  return `${combinedNumber}k`;
+};
+
+const RenderValue = ({ value, name }) => {
+  return (
+    <View style={styles.details}>
+      <Text fontWeight="bold">{prettifyNumbers(value)}</Text>
+      <Text>{name}</Text>
+    </View>
+  );
+};
+
 const RepositoryDetails = ({ stars, reviews, forks, rating }) => {
 
-  const prettifyNumbers = (number) => {
-    if (number < 1000) {
-      return number;
+  const valueList = [
+    {
+      'name': 'Stars',
+      value: stars
+    },
+    {
+      'name': 'Reviews',
+      value: reviews
+    },
+    {
+      'name': 'Forks',
+      value: forks
+    },
+    {
+      'name': 'Rating',
+      value: rating
     }
-    if (number <= 9999) {
-      return `${number.toString().substring(0, 1)}k`;
-    }
-    const tensOfThousands = number.toString().substring(0, 2);
-    const thousands = number.toString().substring(2, 3);
-    const combinedNumber = tensOfThousands.concat(',', thousands);
-
-    return `${combinedNumber}k`;
-  };
+  ];
 
   return (
     <View style={styles.rowBottomContainer}>
-      <View style={styles.details}>
-        <Text fontWeight="bold">{prettifyNumbers(stars)}</Text>
-        <Text>Stars</Text>
-      </View>
-      <View style={styles.details}>
-        <Text fontWeight="bold">{prettifyNumbers(forks)}</Text>
-        <Text>Forks</Text>
-      </View>
-      <View style={styles.details}>
-        <Text fontWeight="bold">{prettifyNumbers(reviews)}</Text>
-        <Text>Reviews</Text>
-      </View>
-      <View style={styles.details}>
-        <Text fontWeight="bold">{prettifyNumbers(rating)}</Text>
-        <Text>Rating</Text>
-      </View>
+      {valueList.map(data => (
+        <RenderValue key={data.name} name={data.name} value={data.value} />
+      ))}
     </View>
   );
 };

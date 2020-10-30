@@ -5,6 +5,10 @@ import { StyleSheet, View } from 'react-native';
 import RepositoryList from './RepositoryList';
 import AppBar from './AppBar';
 import SignIn from './SignIn';
+import SignUp from './SignUp';
+import SingleRepository from './SingleRepository/SingleRepository';
+import CreateReview from './CreateReview';
+import MyReviews from './MyReviews';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,6 +24,18 @@ const Main = () => {
       <Switch>
         <Route path="/signin">
           <SignIn />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/myreviews">
+          <MyReviews/>
+        </Route>
+        <Route path="/review">
+          <CreateReview />
+        </Route>
+        <Route path="/:repoId">
+          <SingleRepository />
         </Route>
         <Route path="/" exact>
           <RepositoryList />

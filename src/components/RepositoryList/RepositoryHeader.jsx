@@ -15,7 +15,7 @@ const RepositoryHeader = ({
   image,
   fullName,
   description,
-  language
+  language,
 }) => {
   return (
     <View style={styles.rowContainer}>

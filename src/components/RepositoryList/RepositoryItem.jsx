@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   columnContainer: {
     display: 'flex',
     flexDirection: 'column',
-    marginBottom: 10
+    marginBottom: 15
   }
 });
 

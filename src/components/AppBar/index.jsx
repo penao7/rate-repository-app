@@ -8,9 +8,6 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     backgroundColor: themes.colors.tabBackGround,
     paddingBottom: 20
-  },
-  tabStyles: {
-    flex: 1,
   }
 });
 

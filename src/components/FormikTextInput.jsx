@@ -27,7 +27,7 @@ const FormikTextInput = ({ name, ...props }) => {
         secureTextEntry={name === 'password' ? true : false}
         {...props}
       />
-      {showError && <Text style={styles.errorText}>{meta.error}</Text>}
+      {showError && <Text testID="inputError" style={styles.errorText}>{meta.error}</Text>}
     </>
   );
 };

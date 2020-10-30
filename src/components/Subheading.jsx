@@ -1,10 +1,10 @@
 import React from 'react';
 import Text from './Text';
 
-const Subheading = ({ children, ...props }) => {
+const Subheading = ({ children }) => {
 
   return (
-    <Text fontSize="subheading" {...props}>{children}</Text>
+    <Text fontSize="subheading">{children}</Text>
   );
 };
 

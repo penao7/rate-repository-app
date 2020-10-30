@@ -7,7 +7,7 @@ const useSignIn = () => {
 
   const [mutate, result] = useMutation(SIGN_IN, {
     onError: (err) => {
-      console.log(err);
+      alert(err.graphQLErrors[0].message);
     }
   });
 

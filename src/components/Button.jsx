@@ -11,22 +11,31 @@ const styles = StyleSheet.create({
   },
   buttonBody: {
     padding: 8,
-    width: 75,
-    marginTop: 20,
+    width: 100,
     borderWidth: 1,
     borderColor: 'lightgrey',
     borderRadius: 10,
-    backgroundColor: theme.colors.buttonPrimary,
   },
   buttonText: {
     textAlign: 'center',
     color: theme.colors.buttonPrimaryText,
+  },
+  buttonColorPrimary: {
+    backgroundColor: theme.colors.buttonPrimary
+  },
+  buttonColorDanger: {
+    backgroundColor: theme.colors.buttonDanger
   }
 });
 
-const Button = ({ style, title, ...props }) => {
+const Button = ({ color, style, title, ...props }) => {
 
-  const buttonStyle = [styles.buttonBody, style];
+  const buttonStyle = [
+    styles.buttonBody,
+    color === 'danger' && styles.buttonColorDanger,
+    color === 'primary' && styles.buttonColorPrimary,
+    style
+  ];
 
   return (
     <View style={styles.container}>

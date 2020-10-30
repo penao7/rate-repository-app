@@ -31,8 +31,10 @@ const SignIn = () => {
     try {
       const { authorize } = await signIn({ username, password });
 
+      console.log('authorize', authorize);
+
       if (authorize.accessToken) {
-        history.push('/repositories');
+        history.push('/');
       }
 
     } catch (e) {
