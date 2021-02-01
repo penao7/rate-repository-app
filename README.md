@@ -38,22 +38,22 @@ and the app will be available in the url given by Expo.
   </tr>
   <tr>
     <td>
-      <img src='/pics/sign-up.png' height=300 width=200>
+      <img src='/pics/sign-up.png' height=300 width=150>
     </td>
     <td>
-      <img src='/pics/repo-list.png' height=300>
+      <img src='/pics/repo-list.png' height=300 width=150>
     </td>
     <td>
-      <img src='/pics/filter.png' height=300>
+      <img src='/pics/filter.png' height=300 width=150>
     </td>
     <td>
-      <img src='/pics/sort.png' height=300>
+      <img src='/pics/sort.png' height=300 width=150>
     </td>
     <td>
-      <img src='/pics/create-review.png' height=300>
+      <img src='/pics/create-review.png' height=300 width=150>
     </td>
     <td>
-      <img src='/pics/my-review.png' height=300>
+      <img src='/pics/my-review.png' height=300 width=150>
     </td>
   </tr>
 </table>
