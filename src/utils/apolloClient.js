@@ -12,7 +12,7 @@ const createApolloClient = (authStorage) => {
           },
         });
       } catch (e) {
-        console.log(e);
+        console.log('ERROR', e);
       }
     },
     uri: Constants.manifest.extra.apolloUri
