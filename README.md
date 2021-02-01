@@ -38,7 +38,7 @@ and the app will be available in the url given by Expo.
   </tr>
   <tr>
     <td>
-      <img src='/pics/sign-up.png' height=300>
+      <img src='/pics/sign-up.png' height=300 width=200>
     </td>
     <td>
       <img src='/pics/repo-list.png' height=300>
